@@ -1,0 +1,42 @@
+###> Docker & Infrastructure ###
+# Lokální overridy docker-compose (často se používá pro lokální porty nebo dev nastavení)
+docker-compose.override.yml
+
+# Pokud bys někdy dumpoval DB do rootu nebo mapoval data na hosta
+/db_data/
+*.sql
+*.sql.gz
+
+# SSL certifikáty (pokud bys generoval lokální certy pro HTTPS)
+docker/nginx/certs/
+*.pem
+*.key
+
+# Logy infrastruktury (pokud je nemapuješ dovnitř kontejneru)
+/logs/
+###< Docker & Infrastructure ###
+
+###> IDE & Editors ###
+# PhpStorm
+.idea/
+
+# VS Code
+.vscode/
+
+# Sublime / Atom / Others
+*.sublime-project
+*.sublime-workspace
+*.swp
+###< IDE & Editors ###
+
+###> OS System Files ###
+.DS_Store
+Thumbs.db
+###< OS System Files ###
+
+###> Symfony Project Root (Exceptions) ###
+# Pokud bys chtěl ignorovat celou složku app kromě composer.json (což asi nechceš), 
+# sem by přišly pravidla. 
+# Ale protože app/ má vlastní .gitignore, zde to necháme čisté.
+###< Symfony Project Root ###
+note-local/
